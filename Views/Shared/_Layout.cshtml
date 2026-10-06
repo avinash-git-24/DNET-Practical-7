@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Feedback Portal</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background-color: #1f3c88;
+            color: white;
+            padding: 25px 45px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+            header h1 {
+                margin: 0;
+                font-size: 32px;
+            }
+
+        main {
+            width: 600px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 35px 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+
+            main h2 {
+                margin-top: 0;
+                color: #1f3c88;
+                font-size: 27px;
+            }
+
+            main p {
+                color: #555;
+                font-size: 16px;
+            }
+
+            main form p {
+                margin: 22px 0;
+            }
+
+            main label {
+                display: block;
+                margin-bottom: 7px;
+                font-weight: bold;
+                color: #333;
+            }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid #ccd3df;
+            border-radius: 6px;
+            font-size: 15px;
+            background-color: white;
+        }
+
+            input[type="text"]:focus,
+            input[type="email"]:focus,
+            select:focus,
+            textarea:focus {
+                border-color: #1f3c88;
+                outline: none;
+            }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #1f3c88;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            input[type="submit"]:hover {
+                background-color: #162d68;
+            }
+
+        .field-validation-error {
+            display: block;
+            color: #d93025;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: #1f2937;
+            color: white;
+        }
+
+        @@media (max-width: 700px) {
+            main {
+                width: 90%;
+                margin: 25px auto;
+                padding: 25px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+                header h1 {
+                    font-size: 25px;
+                }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Feedback Portal</h1>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>
+        Student Feedback Management System
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+﻿@model DNET_Practical_7.Models.Feedback
+
+@{
+    ViewBag.Title = "Feedback";
+}
+
+@Html.Partial("_FeedbackHeader")
+
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.LabelFor(x => x.Name)<br />
+        @Html.TextBoxFor(x => x.Name)<br />
+        @Html.ValidationMessageFor(x => x.Name)
+    </p>
+
+    <p>
+        @Html.LabelFor(x => x.Email)<br />
+        @Html.TextBoxFor(x => x.Email)<br />
+        @Html.ValidationMessageFor(x => x.Email)
+    </p>
+
+    <p>
+        @Html.LabelFor(x => x.Course)<br />
+
+        @Html.DropDownListFor(
+            x => x.Course,
+            new SelectList(new[]
+            {
+                "Computer Engineering",
+                "Information Technology",
+                "Mechanical Engineering",
+                "Civil Engineering"
+            }),
+            "Select Course"
+        )
+
+        <br />
+        @Html.ValidationMessageFor(x => x.Course)
+    </p>
+
+    <p>
+        @Html.LabelFor(x => x.Rating)<br />
+
+        @Html.DropDownListFor(
+            x => x.Rating,
+            new SelectList(new[]
+            {
+                new { Value = "1", Text = "1 - Poor" },
+                new { Value = "2", Text = "2 - Fair" },
+                new { Value = "3", Text = "3 - Good" },
+                new { Value = "4", Text = "4 - Very Good" },
+                new { Value = "5", Text = "5 - Excellent" }
+            }, "Value", "Text"),
+            "Select Rating"
+        )
+
+        <br />
+        @Html.ValidationMessageFor(x => x.Rating)
+    </p>
+
+    <p>
+        @Html.LabelFor(x => x.Comments)<br />
+
+        @Html.TextAreaFor(
+            x => x.Comments,
+            5,
+            40,
+            null
+        )
+
+        <br />
+        @Html.ValidationMessageFor(x => x.Comments)
+    </p>
+
+    <p>
+        <input type="submit" value="Submit Feedback" />
+    </p>
+}

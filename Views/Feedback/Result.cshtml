@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Feedback Result";
+}
+
+<h2>Feedback Submitted</h2>
+
+<p>@TempData["FeedbackMessage"]</p>
+
+<hr />
+
+<h3>Feedback Details</h3>
+
+<p>
+    <strong>Name:</strong>
+    @TempData["FeedbackName"]
+</p>
+
+<p>
+    <strong>Course:</strong>
+    @TempData["FeedbackCourse"]
+</p>
+
+<p>
+    <strong>Rating:</strong>
+    @TempData["FeedbackRating"] / 5
+</p>
+
+<p>
+    <strong>Comments:</strong>
+    @TempData["FeedbackComments"]
+</p>
+
+<br />
+
+@Html.ActionLink(
+    "Submit Another Feedback",
+    "Index",
+    "Feedback"
+)
